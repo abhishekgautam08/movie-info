@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  min-height: 100%;
+  padding: 2%;
+}
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lora", serif;
+  color: black;
+  font-size: 6rem;
+  transition: all 0.5s linear;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 export const API_URL = `https://www.omdbapi.com/?&apikey=${process.env.REACT_APP_API_KEY}`;
+// console.log(API_URL);
 
 const useMoviedata = (movieParams) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -11,9 +12,9 @@ const useMoviedata = (movieParams) => {
     setIsLoading(true);
     try {
       const res = await fetch(url);
-      console.log(res);
+
       const data = await res.json();
-      console.log(data);
+
       if (data.Response === "True") {
         setIsLoading(false);
         setMovie(data.Search || data);
@@ -30,10 +31,9 @@ const useMoviedata = (movieParams) => {
     let timeOut = setTimeout(() => {
       getMovie(`${API_URL}&s=${movieParams}`);
     }, 1000);
-    console.log("set");
+
     return () => {
       clearTimeout(timeOut);
-      console.log("clear");
     };
   }, [movieParams]);
 

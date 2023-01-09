@@ -1,10 +1,13 @@
 import Search from "./Search";
 import Movie from "./Movie";
+import "./Home.css";
 const Home = () => {
   return (
     <>
-      <Search />
-      <Movie />
+      <div className="background">
+        <Search />
+        <Movie />
+      </div>
     </>
   );
 };

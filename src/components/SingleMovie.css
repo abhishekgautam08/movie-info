@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to bottom right, #121c84, #8278da);
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-text {
+  font-size: 1.8rem;
+}
+.back-btn {
+  background-color: black;
+  color: azure;
+  font-size: 30px;
+  margin-bottom: 6px;
+}

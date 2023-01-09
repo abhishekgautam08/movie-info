@@ -1,77 +1,8 @@
-// import React from "react";
-// import { useParams, NavLink } from "react-router-dom";
-// import useMoviedata from "./useMoviedata";
-
-// const SingleMovie = () => {
-//   const { id } = useParams();
-//   const { isLoading, movie } = useMoviedata(`&i=${id}`);
-
-//   if (isLoading) {
-//     return (
-//       <div className="movie-section">
-//         <div className="loading">Loading....</div>
-//       </div>
-//     );
-//   }
-
-//   const getMovie = async (url) => {
-//     setIsLoading(true);
-//     try {
-//       const res = await fetch(url);
-//       console.log(res);
-//       const data = await res.json();
-//       console.log(data);
-//       if (data.Response === "True") {
-//         setIsLoading(false);
-//         setMovie(data.Search || data);
-//         setIsError({ show: "false", msg: "" });
-//       } else {
-//         setIsError({ show: "true", msg: data.Error });
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     let timeOut = setTimeout(() => {
-//       getMovie(`${API_URL}&s=${movieParams}`);
-//     }, 1000);
-//     console.log("set");
-//     return () => {
-//       clearTimeout(timeOut);
-//       console.log("clear");
-//     };
-//   }, [movieParams]);
-//   return (
-//     <>
-//       <section className="movie-section">
-//         <div className="movie.card">
-//           <figure>
-//             <img src={movie.Poster} alt="" />
-//           </figure>
-//           <div className="card-content">
-//             <p className="titile">{movie.Title}</p>
-//             <p className="card-text">{movie.Released}</p>
-//             <p className="card-text">{movie.Genre}</p>
-//             <p className="card-text">{movie.imdbRating}</p>
-//             <p className="card-text">{movie.Country}</p>
-//             <NavLink to="/" className="back-btn">
-//               Go Back
-//             </NavLink>
-//           </div>
-//         </div>
-//       </section>
-//     </>
-//   );
-// };
-
-// export default SingleMovie;
-
 import React from "react";
 import { useEffect, useState } from "react";
 import { API_URL } from "../context";
-import { useParams } from "react-router-dom";
+import { useParams, NavLink } from "react-router-dom";
+import "./SingleMovie.css";
 
 const SingleMovie = () => {
   const { id } = useParams();
@@ -79,11 +10,13 @@ const SingleMovie = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState();
   const [isError, setIsError] = useState({ show: "false", msg: "" });
+
+  // const setIsError = { show: "false", msg: "" };
   const getMovies = async (url) => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      console.log(data);
+      // console.log(data);
       if (data.Response === "True") {
         setIsLoading(false);
         setMovie(data);
@@ -100,6 +33,7 @@ const SingleMovie = () => {
 
   useEffect(() => {
     let timerOut = setTimeout(() => {
+      // eslint-disable-next-line
       getMovies(`${API_URL}&i=${id}`);
     }, 500);
 
@@ -114,22 +48,78 @@ const SingleMovie = () => {
     );
   }
   return (
-    <>
-      <section className="movie-section">
-        <div className="movie.card">
-          <figure>
-            <img src={movie.Poster} alt="" />
-          </figure>
-          <div className="card-content">
-            <p className="titile">{movie.Title}</p>
-            <p className="card-text">{movie.Released}</p>
-            <p className="card-text">{movie.Genre}</p>
-            <p className="card-text">{movie.imdbRating}</p>
-            <p className="card-text">{movie.Country}</p>
+    <div className="background">
+      <div className="container">
+        <div className="card">
+          <div className="card-body">
+            <figure className="img">
+              <img src={movie.Poster} alt="" />
+            </figure>
+
+            <h1 className="card-title">
+              <b>NAME-</b>
+              {movie.Title}
+            </h1>
+            <p className="card-text">
+              <b>Date Released-</b>
+              {movie.Released}
+            </p>
+            <p className="card-text">
+              <b>Genre-</b>
+              {movie.Genre}
+            </p>
+            <p className="card-text">
+              <b>Imdb Rating-</b>
+              {movie.imdbRating}
+            </p>
+            <p className="card-text">
+              <b>Country-</b>
+              {movie.Country}
+            </p>
+            <p className="card-text">
+              <b>Duration-</b>
+              {movie.Runtime}
+            </p>
+            <p className="card-text">
+              <b>Director-</b>
+              {movie.Director}
+            </p>
+            <p className="card-text">
+              <b>Writer-</b>
+              {movie.Writer}
+            </p>
+            <p className="card-text">
+              <b>Actors-</b>
+              {movie.Actors}
+            </p>
+
+            <p className="card-text">
+              <b>Director-</b>
+              {movie.Director}
+            </p>
+            <p className="card-text">
+              <b>Language-</b>
+              {movie.Language}
+            </p>
+            <p className="card-text">
+              <b>Awards-</b>
+              {movie.Awards}
+            </p>
+            <p className="card-text">
+              <b>Total Earing-</b>
+              {movie.BoxOffice}
+            </p>
+            <p className="card-text">
+              <b>Plot-</b>
+              {movie.Plot}
+            </p>
           </div>
+          <NavLink to="/">
+            <button className="back-btn"> Go Back</button>
+          </NavLink>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 

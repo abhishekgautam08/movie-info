@@ -1,13 +1,20 @@
 import React from "react";
 import { useGlobalContext } from "../context";
+import "./Search.css";
 
 const Search = () => {
   const { query, setQuery, isError } = useGlobalContext();
   return (
     <>
-      <section className="search-section">
-        <h2>Search your fav movie</h2>
-        <form action="#" onSubmit={(e) => e.preventDefault()}>
+      <div className="container">
+        <h1>
+          <b>Search your fav movie</b>
+        </h1>
+        <form
+          action="#"
+          className="search-bar"
+          onSubmit={(e) => e.preventDefault()}
+        >
           <div>
             <input
               type="text"
@@ -20,7 +27,7 @@ const Search = () => {
             <p>{isError.show && isError.msg}</p>
           </div>
         </form>
-      </section>
+      </div>
     </>
   );
 };
