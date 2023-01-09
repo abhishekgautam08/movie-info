@@ -106,7 +106,7 @@ const SingleMovie = () => {
               {movie.Awards}
             </p>
             <p className="card-text">
-              <b>Total Earing-</b>
+              <b>Total Earning-</b>
               {movie.BoxOffice}
             </p>
             <p className="card-text">
