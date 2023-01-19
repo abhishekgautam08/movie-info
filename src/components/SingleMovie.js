@@ -48,72 +48,70 @@ const SingleMovie = () => {
     );
   }
   return (
-    <div className="background">
-      <div className="container">
-        <div className="card">
-          <div className="card-body">
-            <figure className="img">
-              <img src={movie.Poster} alt="" />
-            </figure>
+    <div className="container">
+      <div className="Single-Card">
+        <div className="card-info">
+          <figure>
+            <img src={movie.Poster} alt="" />
+          </figure>
 
-            <h1 className="card-title">
-              <b>NAME-</b>
-              {movie.Title}
-            </h1>
-            <p className="card-text">
-              <b>Date Released-</b>
-              {movie.Released}
-            </p>
-            <p className="card-text">
-              <b>Genre-</b>
-              {movie.Genre}
-            </p>
-            <p className="card-text">
-              <b>Imdb Rating-</b>
-              {movie.imdbRating}
-            </p>
-            <p className="card-text">
-              <b>Country-</b>
-              {movie.Country}
-            </p>
-            <p className="card-text">
-              <b>Duration-</b>
-              {movie.Runtime}
-            </p>
-            <p className="card-text">
-              <b>Director-</b>
-              {movie.Director}
-            </p>
-            <p className="card-text">
-              <b>Writer-</b>
-              {movie.Writer}
-            </p>
-            <p className="card-text">
-              <b>Actors-</b>
-              {movie.Actors}
-            </p>
+          <h1 className="title">
+            <b>NAME-</b>
+            {movie.Title}
+          </h1>
+          <p className="text">
+            <b>Date Released-</b>
+            {movie.Released}
+          </p>
+          <p className="text">
+            <b>Genre-</b>
+            {movie.Genre}
+          </p>
+          <p className="text">
+            <b>Imdb Rating-</b>
+            {movie.imdbRating}
+          </p>
+          <p className="text">
+            <b>Country-</b>
+            {movie.Country}
+          </p>
+          <p className="text">
+            <b>Duration-</b>
+            {movie.Runtime}
+          </p>
+          <p className="text">
+            <b>Director-</b>
+            {movie.Director}
+          </p>
+          <p className="text">
+            <b>Writer-</b>
+            {movie.Writer}
+          </p>
+          <p className="text">
+            <b>Actors-</b>
+            {movie.Actors}
+          </p>
 
-            <p className="card-text">
-              <b>Director-</b>
-              {movie.Director}
-            </p>
-            <p className="card-text">
-              <b>Language-</b>
-              {movie.Language}
-            </p>
-            <p className="card-text">
-              <b>Awards-</b>
-              {movie.Awards}
-            </p>
-            <p className="card-text">
-              <b>Total Earning-</b>
-              {movie.BoxOffice}
-            </p>
-            <p className="card-text">
-              <b>Plot-</b>
-              {movie.Plot}
-            </p>
-          </div>
+          <p className="text">
+            <b>Director-</b>
+            {movie.Director}
+          </p>
+          <p className="text">
+            <b>Language-</b>
+            {movie.Language}
+          </p>
+          <p className="text">
+            <b>Awards-</b>
+            {movie.Awards}
+          </p>
+          <p className="text">
+            <b>Total Earning-</b>
+            {movie.BoxOffice}
+          </p>
+          <p className="text">
+            <b>Plot-</b>
+            {movie.Plot}
+          </p>
           <NavLink to="/">
             <button className="back-btn"> Go Back</button>
           </NavLink>

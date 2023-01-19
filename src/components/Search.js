@@ -6,10 +6,10 @@ const Search = () => {
   const { query, setQuery, isError } = useGlobalContext();
   return (
     <>
-      <div className="container">
-        <h1>
-          <b>Search your fav movie</b>
-        </h1>
+      <div className="Search-Container">
+        <div className="Upper-text">
+          <h1>Search your favourite movie</h1>
+        </div>
         <form
           action="#"
           className="search-bar"
