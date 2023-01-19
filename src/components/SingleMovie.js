@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { API_URL } from "../context";
+import { API_URL } from "./useMoviedata";
 import { useParams, NavLink } from "react-router-dom";
 import "./SingleMovie.css";
 
